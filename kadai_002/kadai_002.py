@@ -20,6 +20,9 @@ df = pd.DataFrame({
 # 平均売上に50を加えた値を計算
 average_sales_plus_50 = df['売上'].mean() + 50
 
+# 新しい列 '平均売上' を作成
+df['平均売上'] = df['売上'].mean()
+
 # 新しい列 '業績ランク' を作成
 df['業績ランク'] = pd.cut(df['売上'],
                          bins=[-float('inf'), df['売上'].mean(), average_sales_plus_50, float('inf')],
